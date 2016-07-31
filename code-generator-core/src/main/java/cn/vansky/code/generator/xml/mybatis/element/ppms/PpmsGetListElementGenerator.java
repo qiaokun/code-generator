@@ -52,7 +52,6 @@ public class PpmsGetListElementGenerator extends PPmsXmlElementGenerator {
             sb.append(MyBatis3FormattingUtil.getEscapedColumnName(c));
             sb.append(" = ");
             sb.append(MyBatis3FormattingUtil.getParameterClause(c));
-            sb.append(',');
 
             isNotNullElement.addElement(new TextElement(sb.toString()));
         }

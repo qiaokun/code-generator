@@ -10,7 +10,6 @@ import cn.vansky.code.generator.api.formatter.JavaFormatter;
 import cn.vansky.code.generator.api.formatter.XmlFormatter;
 import cn.vansky.code.generator.db.DatabaseWrapper;
 import cn.vansky.code.generator.factory.RuleFactory;
-import cn.vansky.code.generator.factory.TableInfoWrapperFactory;
 import cn.vansky.code.generator.java.resolver.DefaultJavaTypeResolverImpl;
 import cn.vansky.code.generator.java.resolver.JavaTypeResolver;
 
@@ -41,7 +40,7 @@ public class CodeGenContext {
     /** JAVA类型解析 */
     private JavaTypeResolver javaTypeResolver;
 
-    private TableInfoWrapperFactory.TableInfoWrapperEnum tableInfoWrapperEnum;
+    private String generatorType;
 
     /** 默认规则类 */
     private RuleFactory.RuleEnum ruleEnum;
@@ -87,7 +86,6 @@ public class CodeGenContext {
         this.javaFormatter = new DefaultJavaFormatter();
         this.xmlFormatter = new DefaultXmlFormatter();
         this.javaTypeResolver = new DefaultJavaTypeResolverImpl();
-        this.tableInfoWrapperEnum = TableInfoWrapperFactory.TableInfoWrapperEnum.FRAME_WORK;
         this.ruleEnum = RuleFactory.RuleEnum.BASE_RULE;
     }
 
@@ -180,12 +178,12 @@ public class CodeGenContext {
         this.javaTypeResolver = javaTypeResolver;
     }
 
-    public TableInfoWrapperFactory.TableInfoWrapperEnum getTableInfoWrapperEnum() {
-        return tableInfoWrapperEnum;
+    public String getGeneratorType() {
+        return generatorType;
     }
 
-    public void setTableInfoWrapperEnum(TableInfoWrapperFactory.TableInfoWrapperEnum tableInfoWrapperEnum) {
-        this.tableInfoWrapperEnum = tableInfoWrapperEnum;
+    public void setGeneratorType(String generatorType) {
+        this.generatorType = generatorType;
     }
 
     public RuleFactory.RuleEnum getRuleEnum() {

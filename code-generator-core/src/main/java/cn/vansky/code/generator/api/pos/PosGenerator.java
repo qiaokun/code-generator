@@ -2,15 +2,15 @@
  * Copyright (C) 2015 CK, Inc. All Rights Reserved.
  */
 
-package cn.vansky.code.generator.api.ppms;
+package cn.vansky.code.generator.api.pos;
 
 import cn.vansky.code.generator.api.MyBatisGenerator;
 import cn.vansky.code.generator.api.file.GeneratedJavaFile;
 import cn.vansky.code.generator.api.file.GeneratedXmlFile;
 import cn.vansky.code.generator.config.CodeGenContext;
-import cn.vansky.code.generator.xml.spring.document.AbstractSpringXMLDocument;
 import cn.vansky.code.generator.xml.Document;
-import cn.vansky.code.generator.xml.spring.document.ppms.PPmsSpringXMLDocument;
+import cn.vansky.code.generator.xml.spring.document.AbstractSpringXMLDocument;
+import cn.vansky.code.generator.xml.spring.document.pos.PosSpringXMLDocument;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,11 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PPmsGenerator extends MyBatisGenerator {
+public class PosGenerator extends MyBatisGenerator {
 
     protected AbstractSpringXMLDocument springXmlMapperGenerator;
 
-    public PPmsGenerator(CodeGenContext context) {
+    public PosGenerator(CodeGenContext context) {
         super(context);
         this.context = context;
         this.generatedJavaFiles = new ArrayList<GeneratedJavaFile>();
@@ -36,7 +36,7 @@ public class PPmsGenerator extends MyBatisGenerator {
      */
     public void generateFiles() {
         super.generateFiles();
-        this.springXmlMapperGenerator = new PPmsSpringXMLDocument(context, tableInfoWrappers);
+        this.springXmlMapperGenerator = new PosSpringXMLDocument(context, tableInfoWrappers);
         List<Document> springDocument = springXmlMapperGenerator.getDocument();
         for (Document d : springDocument) {
             GeneratedXmlFile gxf1 = new GeneratedXmlFile(d, d.getName(),

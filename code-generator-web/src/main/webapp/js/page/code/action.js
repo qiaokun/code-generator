@@ -21,6 +21,15 @@ $(function () {
         textField: 'text',
         panelHeight:'auto'
     });
+
+    $.getJSON('../kv/hint?module=1', function(json) {
+        $('#generatorType').combobox({
+            data : json.dataList,
+            valueField: 'value',
+            textField: 'text',
+            panelHeight: 'auto'
+        });
+    });
 });
 
 function listLoader(param, success, error) {
@@ -30,7 +39,8 @@ function listLoader(param, success, error) {
         user: $('#user').val(),
         password: $('#password').val(),
         url: $('#url').val(),
-        path: $('#path').val(),
+//        path: $('#path').val(),
+        generatorType: $('#generatorType').combobox('getValue'),
         isColumnNameDelimited: $('#isColumnNameDelimited').combobox('getValue')
     };
     page_list('selectTableName', params, success, error);

@@ -2,7 +2,7 @@
  * Copyright (C) 2015 CK, Inc. All Rights Reserved.
  */
 
-package cn.vansky.code.generator.xml.mybatis.element.framework;
+package cn.vansky.code.generator.xml.mybatis.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
@@ -15,7 +15,7 @@ import cn.vansky.code.generator.xml.XmlElement;
  * Author: CK
  * Date: 2015/6/7
  */
-public class UpdateByPrimaryKeySelectiveElementGenerator extends FrameworkXmlElementGenerator {
+public class PosUpdateSelectiveElementGenerator extends PosXmlElementGenerator {
 
     @Override
     public void prepareXmlElement() {

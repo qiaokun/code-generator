@@ -13,8 +13,9 @@
         <div>
             类路径<input class="easyui-textbox" type="text" name="classpath" id="classpath" data-options="required:true,prompt:'cn.vansky'"/>
             项目名<input class="easyui-textbox" type="text" name="projectName" id="projectName" data-options="required:true,prompt:'code'"/>
-            数据源<input class="easyui-textbox" type="text" name="path" id="path" value="sqlSessionFactory"/>
+            <%--数据源<input class="easyui-textbox" type="text" name="path" id="path" value="sqlSessionFactory"/>--%>
             分隔符<input class="easyui-combobox" name="isColumnNameDelimited" id="isColumnNameDelimited" style="width:50px;"/>
+            项目<input class="easyui-combobox" name="generatorType" id="generatorType" style="width:100px;"/>
             <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()">查询表名</a>
             <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doCode();">生成代码</a>
             <a href="https://git.oschina.net/yuqiangcui/code-generator-ppms.git" class="easyui-linkbutton" target="_blank">源码</a>

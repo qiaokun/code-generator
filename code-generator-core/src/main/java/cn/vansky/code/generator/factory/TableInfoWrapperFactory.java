@@ -1,8 +1,10 @@
 package cn.vansky.code.generator.factory;
 
+import cn.vansky.code.generator.api.TableInfoWrapperEnum;
 import cn.vansky.code.generator.config.CodeGenContext;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.framework.FrameWorkTableMyBatis3Impl;
+import cn.vansky.code.generator.db.pos.PosTableMyBatis3Impl;
 import cn.vansky.code.generator.db.ppms.PPmsTableMyBatis3Impl;
 
 /**
@@ -22,24 +24,14 @@ public class TableInfoWrapperFactory {
     }
 
     public TableInfoWrapper getTableInfoWrapper(CodeGenContext context) {
-        TableInfoWrapperEnum tableInfoWrapperEnum = context.getTableInfoWrapperEnum();
+        TableInfoWrapperEnum tableInfoWrapperEnum = TableInfoWrapperEnum.get(context.getGeneratorType());
         if (TableInfoWrapperEnum.FRAME_WORK.equals(tableInfoWrapperEnum)) {
             return new FrameWorkTableMyBatis3Impl(context);
         } else if (TableInfoWrapperEnum.PPMS.equals(tableInfoWrapperEnum)) {
             return new PPmsTableMyBatis3Impl(context);
+        } else if (TableInfoWrapperEnum.POS.equals(tableInfoWrapperEnum)) {
+            return new PosTableMyBatis3Impl(context);
         }
         throw new RuntimeException("没有相应的TableInfoWrapper类: TableInfoWrapperFactory");
-    }
-
-    public static enum TableInfoWrapperEnum {
-        FRAME_WORK("FRAME_WORK"),
-        PPMS("PPMS"),
-        ;
-
-        private String name;
-
-        private TableInfoWrapperEnum(String name) {
-            this.name = name;
-        }
     }
 }

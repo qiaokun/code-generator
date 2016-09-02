@@ -14,4 +14,7 @@
     </context:component-scan>
 
     <bean id="responseExceptionHandlerResolver" class="cn.vansky.framework.core.web.handler.ResponseExceptionHandlerResolver"/>
+
+    <bean id="kvService" class="cn.vansky.framework.core.kv.service.impl.KvServiceImpl">
+    </bean>
 </beans>

@@ -6,8 +6,6 @@ package cn.vansky.code.generator.vo;
 
 import cn.vansky.framework.core.vo.BaseVo;
 
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * Author: CK
@@ -49,6 +47,8 @@ public class CodeVo extends BaseVo {
     private Integer isColumnNameDelimited;
 
     private String tableNames;
+
+    private String generatorType;
 
     /**
      * Getter for property 'url'.
@@ -170,5 +170,13 @@ public class CodeVo extends BaseVo {
 
     public void setTableNames(String tableNames) {
         this.tableNames = tableNames;
+    }
+
+    public String getGeneratorType() {
+        return generatorType;
+    }
+
+    public void setGeneratorType(String generatorType) {
+        this.generatorType = generatorType;
     }
 }

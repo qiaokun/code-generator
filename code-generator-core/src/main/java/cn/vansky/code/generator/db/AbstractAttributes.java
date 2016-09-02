@@ -132,6 +132,10 @@ public abstract class AbstractAttributes {
         return ATTR_UPDATE_BY_PRIMARY_KEY_STATEMENT_ID;
     }
 
+    public String getUpdateByPrimaryKeySelective() {
+        return ATTR_UPDATE_BY_PRIMARY_KEY_SELECTIVE_STATEMENT_ID;
+    }
+
     public String getUpdateByPrimaryKeySelectiveWithBLOBs() {
         return ATTR_UPDATE_BY_PRIMARY_KEY_WITH_BLOBS_STATEMENT_ID;
     }

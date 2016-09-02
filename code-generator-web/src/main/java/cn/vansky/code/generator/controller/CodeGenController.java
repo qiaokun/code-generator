@@ -5,8 +5,8 @@
 package cn.vansky.code.generator.controller;
 
 import cn.vansky.code.generator.api.MyBatisGenerator;
-import cn.vansky.code.generator.api.ppms.PPmsGenerator;
 import cn.vansky.code.generator.config.CodeGenContext;
+import cn.vansky.code.generator.factory.GeneratorFactory;
 import cn.vansky.code.generator.service.CodeService;
 import cn.vansky.code.generator.vo.CodeVo;
 import cn.vansky.code.generator.vo.TableName;
@@ -58,8 +58,7 @@ public class CodeGenController extends AbstractController {
             list.add(tableName);
         }
         context.setTableNameList(list);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(context);
-//        PPmsGenerator myBatisGenerator = new PPmsGenerator(context);
+        MyBatisGenerator myBatisGenerator = GeneratorFactory.getInstance().getTableInfoWrapper(context);
         myBatisGenerator.generate();
 
         CommonCompress compress = new ZIP();

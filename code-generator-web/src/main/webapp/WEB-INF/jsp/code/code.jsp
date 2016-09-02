@@ -18,7 +18,7 @@
             项目<input class="easyui-combobox" name="generatorType" id="generatorType" style="width:100px;"/>
             <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()">查询表名</a>
             <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doCode();">生成代码</a>
-            <a href="https://git.oschina.net/yuqiangcui/code-generator-ppms.git" class="easyui-linkbutton" target="_blank">源码</a>
+            <a href="https://git.oschina.net/yuqiangcui/code-generator.git" class="easyui-linkbutton" target="_blank">源码</a>
         </div>
         <div>
             用户名<input class="easyui-textbox" type="text" name="user" id="user" data-options="required:true,prompt:'root'"/>

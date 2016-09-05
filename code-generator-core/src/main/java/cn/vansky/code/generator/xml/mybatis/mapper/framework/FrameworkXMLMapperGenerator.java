@@ -4,10 +4,7 @@
 
 package cn.vansky.code.generator.xml.mybatis.mapper.framework;
 
-import cn.vansky.code.generator.config.XmlConstants;
 import cn.vansky.code.generator.db.framework.FrameworkAttributes;
-import cn.vansky.code.generator.xml.Attribute;
-import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.element.framework.*;
@@ -19,24 +16,12 @@ import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
  * Date: 2015/6/6.
  */
 public class FrameworkXMLMapperGenerator extends AbstractXmlMapperGenerator<FrameworkAttributes> {
-    
-    @Override
-    public Document getDocument() {
-        Document document = new Document(XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,
-                XmlConstants.MYBATIS3_MAPPER_SYSTEM_ID);
-        document.setRootElement(getSqlMapElement());
-        return document;
-    }
 
     /**
      * 获取SQL MAP元素
-     * @return XmlElement
+     * @param answer XmlElement
      */
-    protected XmlElement getSqlMapElement() {
-        XmlElement answer = new XmlElement("mapper");
-        String namespace = tableInfoWrapper.getAttributes().getNamespace();
-        answer.addAttribute(new Attribute("namespace", namespace));
-
+    public void getSqlMapElement(XmlElement answer) {
         // resultMap
         addResultMapWithoutBLOBsElement(answer);
         addResultMapWithBLOBsElement(answer);
@@ -68,8 +53,6 @@ public class FrameworkXMLMapperGenerator extends AbstractXmlMapperGenerator<Fram
         // updateByPrimaryKey
         addUpdateByPrimaryKeyWithoutBLOBsElement(answer);
         addUpdateByPrimaryKeyWithBLOBsElement(answer);
-
-        return answer;
     }
 
     /**
@@ -96,7 +79,7 @@ public class FrameworkXMLMapperGenerator extends AbstractXmlMapperGenerator<Fram
      */
     protected void addDeleteByPrimaryKeyElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
-            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new DeleteByPrimaryKeyElementGenerator(false);
+            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new DeleteByPrimaryKeyElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
@@ -107,7 +90,7 @@ public class FrameworkXMLMapperGenerator extends AbstractXmlMapperGenerator<Fram
      */
     protected void addInsertElement(XmlElement parentElement) {
         if (rules.generateInsert()) {
-            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new InsertElementGenerator(false);
+            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new InsertElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
@@ -118,7 +101,7 @@ public class FrameworkXMLMapperGenerator extends AbstractXmlMapperGenerator<Fram
      */
     protected void addInsertBatchElement(XmlElement parentElement) {
         if (rules.generateInsertBatch()) {
-            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new InsertBatchElementGenerator(false);
+            AbstractXmlElementGenerator<FrameworkAttributes> elementGenerator = new InsertBatchElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

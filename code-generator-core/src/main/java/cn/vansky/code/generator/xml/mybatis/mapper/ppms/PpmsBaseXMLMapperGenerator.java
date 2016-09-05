@@ -1,9 +1,6 @@
 package cn.vansky.code.generator.xml.mybatis.mapper.ppms;
 
-import cn.vansky.code.generator.config.XmlConstants;
 import cn.vansky.code.generator.db.ppms.PPmsAttributes;
-import cn.vansky.code.generator.xml.Attribute;
-import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.element.ppms.*;
@@ -16,23 +13,11 @@ import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
  */
 public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PPmsAttributes> {
 
-    @Override
-    public Document getDocument() {
-        Document document = new Document(XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,
-                XmlConstants.MYBATIS3_MAPPER_SYSTEM_ID);
-        document.setRootElement(getSqlMapElement());
-        return document;
-    }
-
     /**
      * 获取SQL MAP元素
-     * @return XmlElement
+     * @param answer XmlElement
      */
-    protected XmlElement getSqlMapElement() {
-        XmlElement answer = new XmlElement("mapper");
-        String namespace = tableInfoWrapper.getAttributes().getNamespace();
-        answer.addAttribute(new Attribute("namespace", namespace));
-
+    public void getSqlMapElement(XmlElement answer) {
         addResultMapWithoutBLOBsElement(answer);
 
         addBaseColumnListElement(answer);
@@ -50,8 +35,6 @@ public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PPmsA
         addPpmsGetListElement(answer);
 
         addPpmsFindPageElement(answer);
-
-        return answer;
     }
 
     protected void addPpmsInsertElement(XmlElement parentElement) {
@@ -70,7 +53,7 @@ public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PPmsA
 
     protected void addPpmsDeleteElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
-            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsDeleteElementGenerator(false);
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsDeleteElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
@@ -98,7 +81,7 @@ public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PPmsA
 
     protected void addPpmsInsertBatchElement(XmlElement parentElement) {
         if (rules.generateInsertBatch()) {
-            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsInsertBatchElementGenerator(false);
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsInsertBatchElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

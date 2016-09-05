@@ -23,7 +23,7 @@ import java.util.List;
 public class PosTableMyBatis3Impl extends TableInfoWrapper<PosAttributes> {
     public PosTableMyBatis3Impl(CodeGenContext context) {
         super(context);
-        this.xmlMapperGenerator = new EmptyXMLMapperGenerator();
+        this.xmlMapperGenerator = new EmptyXMLMapperGenerator<PosAttributes>();
         this.xmlMapperGenerator.setTableInfoWrapper(this);
         this.baseXmlMapperGenerator = new PosBaseXMLMapperGenerator();
         this.baseXmlMapperGenerator.setTableInfoWrapper(this);

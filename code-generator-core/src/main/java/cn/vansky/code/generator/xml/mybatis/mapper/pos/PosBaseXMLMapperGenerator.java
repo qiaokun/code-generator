@@ -1,9 +1,6 @@
 package cn.vansky.code.generator.xml.mybatis.mapper.pos;
 
-import cn.vansky.code.generator.config.XmlConstants;
 import cn.vansky.code.generator.db.pos.PosAttributes;
-import cn.vansky.code.generator.xml.Attribute;
-import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.element.pos.*;
@@ -16,22 +13,11 @@ import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
  */
 public class PosBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PosAttributes> {
 
-    @Override
-    public Document getDocument() {
-        Document document = new Document(XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,
-                XmlConstants.MYBATIS3_MAPPER_SYSTEM_ID);
-        document.setRootElement(getSqlMapElement());
-        return document;
-    }
-
     /**
      * 获取SQL MAP元素
-     * @return XmlElement
+     * @param answer XmlElement
      */
-    protected XmlElement getSqlMapElement() {
-        XmlElement answer = new XmlElement("mapper");
-        String namespace = tableInfoWrapper.getAttributes().getNamespace();
-        answer.addAttribute(new Attribute("namespace", namespace));
+    public void getSqlMapElement(XmlElement answer) {
 
         addResultMapWithoutBLOBsElement(answer);
 
@@ -52,8 +38,6 @@ public class PosBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PosAtt
         addDeleteElement(answer);
 
         addPpmsFindPageElement(answer);
-
-        return answer;
     }
 
     protected void addSelectElement(XmlElement parentElement) {

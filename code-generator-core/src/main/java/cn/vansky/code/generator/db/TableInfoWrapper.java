@@ -28,9 +28,9 @@ import java.util.Map;
  */
 public abstract class TableInfoWrapper<T extends AbstractAttributes> {
     /** XML内容生成类 */
-    protected AbstractXmlMapperGenerator xmlMapperGenerator;
+    protected AbstractXmlMapperGenerator<T> xmlMapperGenerator;
     /** JAVA文件生成类 */
-    protected AbstractJavaGenerator javaModelGenerators;
+    protected AbstractJavaGenerator<T> javaModelGenerators;
     /** 生成规则 */
     protected Rules rules;
     protected T attributes;

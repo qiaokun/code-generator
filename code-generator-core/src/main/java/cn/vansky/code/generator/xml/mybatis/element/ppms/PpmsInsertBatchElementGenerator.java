@@ -19,13 +19,6 @@ import java.util.List;
  */
 public class PpmsInsertBatchElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    private boolean isSimple;
-
-    public PpmsInsertBatchElementGenerator(boolean isSimple) {
-        super();
-        this.isSimple = isSimple;
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "insert";

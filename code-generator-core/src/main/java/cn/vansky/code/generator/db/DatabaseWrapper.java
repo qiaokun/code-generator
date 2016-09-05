@@ -31,27 +31,27 @@ public class DatabaseWrapper {
 
     private CodeGenContext context;
 
-    /** 表信息封装列表 */
-    private List<TableInfoWrapper> tableInfoWrappers = new ArrayList<TableInfoWrapper>();
-
     /**
      * 创建表信息
      */
-    public void createTableInfoWrapper() {
+    public <T extends AbstractAttributes> List<TableInfoWrapper<T>> createTableInfoWrapper() {
+        /** 表信息封装列表 */
+        List<TableInfoWrapper<T>> tableInfoWrappers = new ArrayList<TableInfoWrapper<T>>();
         DbManager dbManager = new DbManager(context.getUrl(), context.getUser(), context.getPassword());
         Connection connection = dbManager.getConnection();
         DatabaseMetaData databaseMetaData = dbManager.getDatabaseMetaData(connection);
         try {
             setDelimiter(databaseMetaData, context);
-            dealKeyTableList(dbManager, connection);
+            dealKeyTableList(dbManager, connection, tableInfoWrappers);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             dbManager.close(connection);
         }
+        return tableInfoWrappers;
     }
 
-    private void dealKeyTableList(DbManager dbManager, Connection connection) throws SQLException {
+    private <T extends AbstractAttributes> void dealKeyTableList(DbManager dbManager, Connection connection, List<TableInfoWrapper<T>> tableInfoWrappers) throws SQLException {
         List<String> tableNames = context.getTableNameList();
         if (null == tableNames) {
             return;
@@ -74,7 +74,7 @@ public class DatabaseWrapper {
                     tableInfo.setContext(context);
                     tableInfoWrapper.setTableInfo(tableInfo);
                     tableInfoWrapper.setMap(answer);
-                    addTableInfoWrapper(tableInfoWrapper);
+                    tableInfoWrappers.add(tableInfoWrapper);
                     ResultSet rs = dbManager.getColumns(connection, null, context.getDatabase(), tableName);
                     while (rs.next()) {
                         ColumnInfo columnInfo = new ColumnInfo();
@@ -120,13 +120,5 @@ public class DatabaseWrapper {
             context.setBeginningDelimiter(dialects.getBegin());
             context.setEndingDelimiter(dialects.getEnd());
         }
-    }
-
-    public void addTableInfoWrapper(TableInfoWrapper tableInfoWrapper) {
-        this.tableInfoWrappers.add(tableInfoWrapper);
-    }
-
-    public List<TableInfoWrapper> getTableInfoWrappers() {
-        return tableInfoWrappers;
     }
 }

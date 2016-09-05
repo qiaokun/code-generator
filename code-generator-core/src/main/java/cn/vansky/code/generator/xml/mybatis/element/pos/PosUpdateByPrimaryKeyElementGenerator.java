@@ -20,10 +20,6 @@ import java.util.Iterator;
  */
 public class PosUpdateByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    public PosUpdateByPrimaryKeyElementGenerator() {
-        super();
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "update";

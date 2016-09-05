@@ -24,7 +24,7 @@ public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper<FrameworkAttrib
     public FrameWorkTableMyBatis3Impl(CodeGenContext context) {
         super(context);
         this.javaModelGenerators = new FrameworkJavaGenerator(this);
-        this.xmlMapperGenerator = new EmptyXMLMapperGenerator();
+        this.xmlMapperGenerator = new EmptyXMLMapperGenerator<FrameworkAttributes>();
         this.xmlMapperGenerator.setTableInfoWrapper(this);
         this.baseXmlMapperGenerator = new FrameworkXMLMapperGenerator();
         this.baseXmlMapperGenerator.setTableInfoWrapper(this);

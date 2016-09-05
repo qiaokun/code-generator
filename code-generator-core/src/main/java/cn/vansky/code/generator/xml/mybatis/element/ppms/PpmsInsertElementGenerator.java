@@ -15,10 +15,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PpmsInsertElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    private String useGeneratedKeys = "true";
-
-    private String keyProperty;
-
     @Override
     public void prepareXmlElement() {
         name = "insert";
@@ -28,12 +24,13 @@ public class PpmsInsertElementGenerator extends AbstractXmlElementGenerator<PPms
 
     @Override
     public void dealElements() {
+        String keyProperty;
         if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {
             keyProperty = "hashmap";
         } else {
             keyProperty = tableInfoWrapper.getPrimaryKeyColumns().get(0).getActualColumnName();
         }
-        answer.addAttribute(new Attribute("useGeneratedKeys", useGeneratedKeys));
+        answer.addAttribute(new Attribute("useGeneratedKeys", "true"));
         answer.addAttribute(new Attribute("keyProperty", keyProperty));
 
         StringBuilder sb = new StringBuilder();

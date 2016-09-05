@@ -10,6 +10,7 @@ import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.java.*;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,5 +30,11 @@ public abstract class AbstractJavaGenerator<T extends AbstractAttributes> extend
         elementGenerator.addCompilationUnit(answers);
     }
 
-    public abstract List<CompilationUnit> getCompilationUnits();
+    public List<CompilationUnit> getCompilationUnits() {
+        List<CompilationUnit> answer = new ArrayList<CompilationUnit>();
+        getJavaFile(answer);
+        return answer;
+    }
+
+    public abstract void getJavaFile(List<CompilationUnit> answer);
 }

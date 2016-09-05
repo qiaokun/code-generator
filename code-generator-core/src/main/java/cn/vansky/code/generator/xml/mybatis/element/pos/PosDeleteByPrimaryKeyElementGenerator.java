@@ -17,10 +17,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PosDeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    public PosDeleteByPrimaryKeyElementGenerator() {
-        super();
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "delete";

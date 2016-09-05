@@ -23,13 +23,6 @@ import java.util.List;
  */
 public class InsertBatchElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    private boolean isSimple;
-
-    public InsertBatchElementGenerator(boolean isSimple) {
-        super();
-        this.isSimple = isSimple;
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "insert";

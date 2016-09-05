@@ -99,4 +99,8 @@ public class XmlElement implements Element {
     public String getName() {
         return name;
     }
+
+    public void setEnd(boolean end) {
+        this.end = end;
+    }
 }

@@ -5,6 +5,7 @@ import cn.vansky.code.generator.api.TableInfoWrapperEnum;
 import cn.vansky.code.generator.api.pos.PosGenerator;
 import cn.vansky.code.generator.api.ppms.PPmsGenerator;
 import cn.vansky.code.generator.config.CodeGenContext;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 
 /**
  * Created by IntelliJ IDEA .
@@ -26,7 +27,7 @@ public class GeneratorFactory {
     public MyBatisGenerator getTableInfoWrapper(CodeGenContext context) {
         TableInfoWrapperEnum tableInfoWrapperEnum = TableInfoWrapperEnum.get(context.getGeneratorType());
         if (TableInfoWrapperEnum.FRAME_WORK.equals(tableInfoWrapperEnum)) {
-            return new MyBatisGenerator(context);
+            return new MyBatisGenerator<FrameworkAttributes>(context);
         } else if (TableInfoWrapperEnum.PPMS.equals(tableInfoWrapperEnum)) {
             return new PPmsGenerator(context);
         } else if (TableInfoWrapperEnum.POS.equals(tableInfoWrapperEnum)) {

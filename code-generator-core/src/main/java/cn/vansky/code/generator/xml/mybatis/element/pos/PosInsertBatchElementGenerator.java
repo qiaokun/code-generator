@@ -23,10 +23,6 @@ import java.util.List;
  */
 public class PosInsertBatchElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    public PosInsertBatchElementGenerator() {
-        super();
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "insert";

@@ -7,7 +7,6 @@ import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.java.element.ppms.*;
 import cn.vansky.code.generator.java.file.AbstractJavaGenerator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,13 +17,6 @@ import java.util.List;
 public class PPmsJavaGenerator extends AbstractJavaGenerator<PPmsAttributes> {
     public PPmsJavaGenerator(TableInfoWrapper<PPmsAttributes> t) {
         super(t);
-    }
-
-    @Override
-    public List<CompilationUnit> getCompilationUnits() {
-        List<CompilationUnit> answer = new ArrayList<CompilationUnit>();
-        getJavaFile(answer);
-        return answer;
     }
 
     public void getJavaFile(List<CompilationUnit> answers) {

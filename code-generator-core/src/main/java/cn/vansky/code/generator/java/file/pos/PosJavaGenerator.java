@@ -7,7 +7,6 @@ import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.java.element.pos.*;
 import cn.vansky.code.generator.java.file.AbstractJavaGenerator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,13 +17,6 @@ import java.util.List;
 public class PosJavaGenerator extends AbstractJavaGenerator<PosAttributes> {
     public PosJavaGenerator(TableInfoWrapper<PosAttributes> t) {
         super(t);
-    }
-
-    @Override
-    public List<CompilationUnit> getCompilationUnits() {
-        List<CompilationUnit> answer = new ArrayList<CompilationUnit>();
-        getJavaFile(answer);
-        return answer;
     }
 
     public void getJavaFile(List<CompilationUnit> answers) {

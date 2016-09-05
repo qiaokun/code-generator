@@ -5,7 +5,9 @@
 package cn.vansky.code.generator.xml.mybatis.mapper;
 
 import cn.vansky.code.generator.api.AbstractGenerator;
+import cn.vansky.code.generator.config.XmlConstants;
 import cn.vansky.code.generator.db.AbstractAttributes;
+import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
@@ -25,7 +27,19 @@ public abstract class AbstractXmlMapperGenerator<T extends AbstractAttributes> e
      * 获取文档信息
      * @return 文档信息
      */
-    public abstract Document getDocument();
+    public Document getDocument() {
+        Document document = new Document(XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,
+                XmlConstants.MYBATIS3_MAPPER_SYSTEM_ID);
+
+        XmlElement answer = new XmlElement("mapper");
+        String namespace = tableInfoWrapper.getAttributes().getNamespace();
+        answer.addAttribute(new Attribute("namespace", namespace));
+        getSqlMapElement(answer);
+        document.setRootElement(answer);
+        return document;
+    }
+
+    public abstract void getSqlMapElement(XmlElement answer);
 
     protected void initializeAndExecuteGenerator(AbstractXmlElementGenerator<T> elementGenerator,
                                                  XmlElement parentElement) {

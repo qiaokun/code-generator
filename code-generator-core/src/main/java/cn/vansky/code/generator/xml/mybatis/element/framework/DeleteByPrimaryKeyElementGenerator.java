@@ -17,13 +17,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class DeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    private boolean isSimple;
-
-    public DeleteByPrimaryKeyElementGenerator(boolean isSimple) {
-        super();
-        this.isSimple = isSimple;
-    }
-
     @Override
     public void prepareXmlElement() {
         name = "delete";

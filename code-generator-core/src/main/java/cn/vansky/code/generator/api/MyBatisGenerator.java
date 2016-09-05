@@ -7,6 +7,7 @@ package cn.vansky.code.generator.api;
 import cn.vansky.code.generator.api.file.GeneratedJavaFile;
 import cn.vansky.code.generator.api.file.GeneratedXmlFile;
 import cn.vansky.code.generator.config.CodeGenContext;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.DatabaseWrapper;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.framework.common.util.FileUtilies;
@@ -23,7 +24,7 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class MyBatisGenerator {
+public class MyBatisGenerator<T extends AbstractAttributes> {
 
     protected CodeGenContext context;
 
@@ -33,7 +34,7 @@ public class MyBatisGenerator {
     /** XML文件列表 */
     protected List<GeneratedXmlFile> generatedXmlFiles;
 
-    protected List<TableInfoWrapper> tableInfoWrappers;
+    protected List<TableInfoWrapper<T>> tableInfoWrappers;
 
     public MyBatisGenerator(CodeGenContext context) {
         this.context = context;
@@ -55,8 +56,7 @@ public class MyBatisGenerator {
      */
     protected void generateFiles() {
         DatabaseWrapper databaseWrapper = context.getDatabaseWrapper();
-        databaseWrapper.createTableInfoWrapper();
-        tableInfoWrappers = databaseWrapper.getTableInfoWrappers();
+        tableInfoWrappers = databaseWrapper.createTableInfoWrapper();
         if (null != tableInfoWrappers) {
             for (TableInfoWrapper tableInfoWrapper : tableInfoWrappers) {
                 tableInfoWrapper.initialize();

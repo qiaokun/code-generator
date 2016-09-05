@@ -26,14 +26,14 @@ import java.util.Map;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public abstract class TableInfoWrapper {
+public abstract class TableInfoWrapper<T extends AbstractAttributes> {
     /** XML内容生成类 */
     protected AbstractXmlMapperGenerator xmlMapperGenerator;
     /** JAVA文件生成类 */
     protected AbstractJavaGenerator javaModelGenerators;
     /** 生成规则 */
     protected Rules rules;
-    protected AbstractAttributes attributes;
+    protected T attributes;
     /** 表信息 */
     protected TableInfo tableInfo;
     /** 全局信息 */
@@ -70,7 +70,7 @@ public abstract class TableInfoWrapper {
         this.tableInfo = tableInfo;
     }
 
-    public void setAttributes(AbstractAttributes attributes) {
+    public void setAttributes(T attributes) {
         this.attributes = attributes;
     }
 
@@ -126,7 +126,7 @@ public abstract class TableInfoWrapper {
         return null != blobColumns && blobColumns.size() > 0;
     }
 
-    public AbstractAttributes getAttributes() {
+    public T getAttributes() {
         return attributes;
     }
 

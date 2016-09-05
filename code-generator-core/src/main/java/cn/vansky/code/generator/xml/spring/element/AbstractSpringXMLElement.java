@@ -6,6 +6,7 @@ package cn.vansky.code.generator.xml.spring.element;
 
 import cn.vansky.code.generator.config.CodeGenContext;
 import cn.vansky.code.generator.config.SpringXMLConstants;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.Document;
@@ -18,15 +19,15 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public abstract class AbstractSpringXMLElement {
+public abstract class AbstractSpringXMLElement<T extends AbstractAttributes> {
 
     protected String name;
 
     protected CodeGenContext context;
 
-    protected List<TableInfoWrapper> tableInfoWrappers;
+    protected List<TableInfoWrapper<T>> tableInfoWrappers;
 
-    protected AbstractSpringXMLElement(String name, CodeGenContext context, List<TableInfoWrapper> tableInfoWrappers) {
+    protected AbstractSpringXMLElement(String name, CodeGenContext context, List<TableInfoWrapper<T>> tableInfoWrappers) {
         this.name = name;
         this.context = context;
         this.tableInfoWrappers = tableInfoWrappers;

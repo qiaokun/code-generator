@@ -5,15 +5,17 @@
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 主键查询
  * Author: CK
  * Date: 2015/6/7
  */
-public class SelectByPrimaryKeyElementGenerator extends FrameworkXmlElementGenerator {
+public class SelectByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     @Override
     public void prepareXmlElement() {

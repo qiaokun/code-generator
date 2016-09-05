@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.java.file.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.java.*;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.java.element.framework.*;
@@ -14,8 +15,8 @@ import java.util.List;
  * Auth: CK
  * Date: 2016/7/10
  */
-public class FrameworkJavaGenerator extends AbstractJavaGenerator {
-    public FrameworkJavaGenerator(TableInfoWrapper t) {
+public class FrameworkJavaGenerator extends AbstractJavaGenerator<FrameworkAttributes> {
+    public FrameworkJavaGenerator(TableInfoWrapper<FrameworkAttributes> t) {
         super(t);
     }
 
@@ -27,25 +28,25 @@ public class FrameworkJavaGenerator extends AbstractJavaGenerator {
     }
 
     public void getJavaFile(List<CompilationUnit> answers) {
-        AbstractJavaElementGenerator baseBo = new FrameworkBaseBoGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> baseBo = new FrameworkBaseBoGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(baseBo, answers);
 
-        AbstractJavaElementGenerator extendBo = new FrameworkExtendsBoGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> extendBo = new FrameworkExtendsBoGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(extendBo, answers);
 
-        AbstractJavaElementGenerator mapper = new FrameworkMapperGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> mapper = new FrameworkMapperGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(mapper, answers);
 
-        AbstractJavaElementGenerator dao = new FrameworkDaoGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> dao = new FrameworkDaoGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(dao, answers);
 
-        AbstractJavaElementGenerator daoImpl = new FrameworkDaoImplGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> daoImpl = new FrameworkDaoImplGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(daoImpl, answers);
 
-        AbstractJavaElementGenerator service = new FrameworkServiceGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> service = new FrameworkServiceGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(service, answers);
 
-        AbstractJavaElementGenerator serverImpl = new FrameworkServiceImplGenerator(tableInfoWrapper);
+        AbstractJavaElementGenerator<FrameworkAttributes> serverImpl = new FrameworkServiceImplGenerator(tableInfoWrapper);
         initializeAndExecuteGenerator(serverImpl, answers);
     }
 }

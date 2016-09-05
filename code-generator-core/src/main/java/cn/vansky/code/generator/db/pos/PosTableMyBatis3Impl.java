@@ -20,7 +20,7 @@ import java.util.List;
  * Auth: CK
  * Date: 2016/7/10
  */
-public class PosTableMyBatis3Impl extends TableInfoWrapper {
+public class PosTableMyBatis3Impl extends TableInfoWrapper<PosAttributes> {
     public PosTableMyBatis3Impl(CodeGenContext context) {
         super(context);
         this.xmlMapperGenerator = new EmptyXMLMapperGenerator();
@@ -36,7 +36,7 @@ public class PosTableMyBatis3Impl extends TableInfoWrapper {
     protected AbstractXmlMapperGenerator baseXmlMapperGenerator;
 
     public void getGeneratedXmlFiles(List<GeneratedXmlFile> answer) {
-        PosAttributes attribute = (PosAttributes) this.attributes;
+        PosAttributes attribute = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,

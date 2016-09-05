@@ -20,7 +20,7 @@ import java.util.List;
  * Auth: CK
  * Date: 2016/7/10
  */
-public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper {
+public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper<FrameworkAttributes> {
     public FrameWorkTableMyBatis3Impl(CodeGenContext context) {
         super(context);
         this.javaModelGenerators = new FrameworkJavaGenerator(this);
@@ -36,7 +36,7 @@ public class FrameWorkTableMyBatis3Impl extends TableInfoWrapper {
     protected AbstractXmlMapperGenerator baseXmlMapperGenerator;
 
     public void getGeneratedXmlFiles(List<GeneratedXmlFile> answer) {
-        FrameworkAttributes frameworkAttributes = (FrameworkAttributes) this.attributes;
+        FrameworkAttributes frameworkAttributes = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,

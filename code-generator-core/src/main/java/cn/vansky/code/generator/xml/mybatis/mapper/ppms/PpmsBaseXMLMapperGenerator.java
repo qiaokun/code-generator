@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.xml.mybatis.mapper.ppms;
 
 import cn.vansky.code.generator.config.XmlConstants;
+import cn.vansky.code.generator.db.ppms.PPmsAttributes;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
@@ -13,7 +14,7 @@ import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator {
+public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PPmsAttributes> {
 
     @Override
     public Document getDocument() {
@@ -55,49 +56,49 @@ public class PpmsBaseXMLMapperGenerator extends AbstractXmlMapperGenerator {
 
     protected void addPpmsInsertElement(XmlElement parentElement) {
         if (rules.generateInsertSelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsInsertElementGenerator();
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsInsertElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsUpdateElement(XmlElement parentElement) {
         if (rules.generateUpdateByPrimaryKeySelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsUpdateElementGenerator();
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsUpdateElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsDeleteElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsDeleteElementGenerator(false);
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsDeleteElementGenerator(false);
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsGetElement(XmlElement parentElement) {
         if (rules.generateSelectByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsGetElementGenerator();
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsGetElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsGetListElement(XmlElement parentElement) {
         if (rules.generateSelectByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsGetListElementGenerator();
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsGetListElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsFindPageElement(XmlElement parentElement) {
         if (rules.generateSelectByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsFindPageElementGenerator();
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsFindPageElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsInsertBatchElement(XmlElement parentElement) {
         if (rules.generateInsertBatch()) {
-            AbstractXmlElementGenerator elementGenerator = new PpmsInsertBatchElementGenerator(false);
+            AbstractXmlElementGenerator<PPmsAttributes> elementGenerator = new PpmsInsertBatchElementGenerator(false);
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.xml.spring.document;
 
 import cn.vansky.code.generator.config.CodeGenContext;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.xml.spring.element.AbstractSpringXMLElement;
 import cn.vansky.code.generator.xml.spring.element.EmptySpringXMLElement;
@@ -14,9 +15,9 @@ import java.util.List;
  * Auth: CK
  * Date: 2016/7/16
  */
-public class EmptySpringXMLDocument extends AbstractSpringXMLDocument {
+public class EmptySpringXMLDocument extends AbstractSpringXMLDocument<AbstractAttributes> {
 
-    public EmptySpringXMLDocument(CodeGenContext context, List<TableInfoWrapper> tableInfoWrapper) {
+    public EmptySpringXMLDocument(CodeGenContext context, List<TableInfoWrapper<AbstractAttributes>> tableInfoWrapper) {
         super(context, tableInfoWrapper);
     }
 

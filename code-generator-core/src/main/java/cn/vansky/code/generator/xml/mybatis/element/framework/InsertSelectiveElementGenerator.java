@@ -5,17 +5,19 @@
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.TextElement;
 import cn.vansky.code.generator.xml.XmlElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 添加部分字段,if-test
  * Author: CK
  * Date: 2015/6/7
  */
-public class InsertSelectiveElementGenerator extends FrameworkXmlElementGenerator {
+public class InsertSelectiveElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     private String useGeneratedKeys = "true";
 

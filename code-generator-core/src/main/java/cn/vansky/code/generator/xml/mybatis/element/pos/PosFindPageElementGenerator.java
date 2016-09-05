@@ -1,17 +1,19 @@
 package cn.vansky.code.generator.xml.mybatis.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.TextElement;
 import cn.vansky.code.generator.xml.XmlElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: CK
  * Date: 2015/6/7
  */
-public class PosFindPageElementGenerator extends PosXmlElementGenerator {
+public class PosFindPageElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
     @Override
     public void prepareXmlElement() {

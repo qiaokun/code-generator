@@ -1,17 +1,19 @@
 package cn.vansky.code.generator.xml.mybatis.element.ppms;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.ppms.PPmsAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.TextElement;
 import cn.vansky.code.generator.xml.XmlElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 添加部分字段,if-test
  * Author: CK
  * Date: 2015/6/7
  */
-public class PpmsInsertElementGenerator extends PPmsXmlElementGenerator {
+public class PpmsInsertElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
     private String useGeneratedKeys = "true";
 

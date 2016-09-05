@@ -5,8 +5,10 @@
 package cn.vansky.code.generator.java.element.ppms;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.ppms.PPmsAttributes;
 import cn.vansky.code.generator.java.*;
 import cn.vansky.code.generator.java.JavaTypeInfoEnum;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 import java.util.List;
 
@@ -15,8 +17,8 @@ import java.util.List;
  * Author: CK
  * Date: 2015/6/13
  */
-public class PPmsServiceGenerator extends PPmsJavaElementGenerator {
-    public PPmsServiceGenerator(TableInfoWrapper tableInfoWrapper) {
+public class PPmsServiceGenerator extends AbstractJavaElementGenerator<PPmsAttributes> {
+    public PPmsServiceGenerator(TableInfoWrapper<PPmsAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

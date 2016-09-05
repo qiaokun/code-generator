@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.xml.mybatis.mapper;
 
 import cn.vansky.code.generator.config.XmlConstants;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
@@ -10,7 +11,7 @@ import cn.vansky.code.generator.xml.XmlElement;
  * Auth: CK
  * Date: 2016/7/16
  */
-public class EmptyXMLMapperGenerator extends AbstractXmlMapperGenerator {
+public class EmptyXMLMapperGenerator extends AbstractXmlMapperGenerator<AbstractAttributes> {
 
     public Document getDocument() {
         Document document = new Document(XmlConstants.MYBATIS3_MAPPER_PUBLIC_ID,

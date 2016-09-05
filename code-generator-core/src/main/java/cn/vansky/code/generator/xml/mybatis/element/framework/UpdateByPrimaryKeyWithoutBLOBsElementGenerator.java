@@ -5,9 +5,11 @@
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.util.OutputUtil;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 import java.util.Iterator;
 
@@ -16,7 +18,7 @@ import java.util.Iterator;
  * Author: CK
  * Date: 2015/6/7
  */
-public class UpdateByPrimaryKeyWithoutBLOBsElementGenerator extends FrameworkXmlElementGenerator {
+public class UpdateByPrimaryKeyWithoutBLOBsElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     private boolean isSimple;
 

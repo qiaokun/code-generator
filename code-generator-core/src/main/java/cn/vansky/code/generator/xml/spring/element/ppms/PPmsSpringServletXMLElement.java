@@ -18,9 +18,9 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PPmsSpringServletXMLElement extends AbstractSpringXMLElement {
+public class PPmsSpringServletXMLElement extends AbstractSpringXMLElement<PPmsAttributes> {
 
-    public PPmsSpringServletXMLElement(String name, CodeGenContext context, List<TableInfoWrapper> ts) {
+    public PPmsSpringServletXMLElement(String name, CodeGenContext context, List<TableInfoWrapper<PPmsAttributes>> ts) {
         super(name, context, ts);
     }
 
@@ -37,8 +37,8 @@ public class PPmsSpringServletXMLElement extends AbstractSpringXMLElement {
         mapping.addElement(property);
 
         XmlElement props = new XmlElement("props");
-        for (TableInfoWrapper t : this.tableInfoWrappers) {
-            PPmsAttributes attributes = ((PPmsAttributes) t.getAttributes());
+        for (TableInfoWrapper<PPmsAttributes> t : this.tableInfoWrappers) {
+            PPmsAttributes attributes = t.getAttributes();
             JavaTypeInfo javaTypeInfo = attributes.getBo();
             String bo = JavaBeansUtil.getValidPropertyName(javaTypeInfo.getShortName());
             XmlElement prop = new XmlElement("prop");

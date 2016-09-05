@@ -5,17 +5,19 @@
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.TextElement;
 import cn.vansky.code.generator.xml.XmlElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * Where精确匹配字段
  * Author: CK
  * Date: 2015/7/9.
  */
-public class BaseColumnEqualElementGenerator extends FrameworkXmlElementGenerator {
+public class BaseColumnEqualElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     @Override
     public void prepareXmlElement() {

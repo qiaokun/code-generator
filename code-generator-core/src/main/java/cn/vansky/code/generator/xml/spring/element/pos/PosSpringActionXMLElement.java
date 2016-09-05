@@ -17,9 +17,9 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PosSpringActionXMLElement extends AbstractSpringXMLElement {
+public class PosSpringActionXMLElement extends AbstractSpringXMLElement<PosAttributes> {
 
-    public PosSpringActionXMLElement(String name, CodeGenContext context, List<TableInfoWrapper> ts) {
+    public PosSpringActionXMLElement(String name, CodeGenContext context, List<TableInfoWrapper<PosAttributes>> ts) {
         super(name, context, ts);
     }
 
@@ -28,8 +28,8 @@ public class PosSpringActionXMLElement extends AbstractSpringXMLElement {
         answer.addAttribute(new Attribute("\n\t\t\t\t" + SpringXMLConstants.XMLNS_SCHEMA_LOCATION,
                 SpringXMLConstants.SPRING_BEANS + "\n\t\t\t\t" + SpringXMLConstants.SPRING_BEANS_XSD));
 
-        for (TableInfoWrapper t : tableInfoWrappers) {
-            PosAttributes attributes = ((PosAttributes) t.getAttributes());
+        for (TableInfoWrapper<PosAttributes> t : tableInfoWrappers) {
+            PosAttributes attributes = t.getAttributes();
             XmlElement action = new XmlElement("bean");
             JavaTypeInfo actionBean = attributes.getController();
             action.addAttribute(new Attribute("id", JavaBeansUtil.getValidPropertyName(actionBean.getShortName())));

@@ -15,7 +15,9 @@ import org.apache.commons.lang.StringUtils;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
+public abstract class AbstractXmlElementGenerator<T extends AbstractAttributes> extends AbstractGenerator<T> {
+
+    public T attributes;
 
     protected XmlElement answer;
 
@@ -36,7 +38,7 @@ public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
      * @param parentElement 元素
      */
     public void addElements(XmlElement parentElement) {
-        getAttributes();
+        this.attributes = tableInfoWrapper.getAttributes();
         prepareXmlElement();
         if (StringUtils.isBlank(name)) {
             throw new RuntimeException("name is NULL");
@@ -67,8 +69,6 @@ public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
         parentElement.addElement(answer);
     }
 
-    public abstract void getAttributes();
-
     /**
      * 预处理，计算name、id、parameterType、resultType、resultMap、
      */
@@ -85,7 +85,7 @@ public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
      */
     protected XmlElement getBaseColumnListElement() {
         XmlElement answer = new XmlElement("include");
-        answer.addAttribute(new Attribute("refid", ((AbstractAttributes) tableInfoWrapper.getAttributes()).getBaseColumnList()));
+        answer.addAttribute(new Attribute("refid", tableInfoWrapper.getAttributes().getBaseColumnList()));
         return answer;
     }
 
@@ -95,7 +95,7 @@ public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
      */
     protected XmlElement getBlobColumnListElement() {
         XmlElement answer = new XmlElement("include");
-        answer.addAttribute(new Attribute("refid", ((AbstractAttributes) tableInfoWrapper.getAttributes()).getBlobColumnList()));
+        answer.addAttribute(new Attribute("refid", tableInfoWrapper.getAttributes().getBlobColumnList()));
         return answer;
     }
 
@@ -105,7 +105,7 @@ public abstract class AbstractXmlElementGenerator extends AbstractGenerator {
      */
     protected XmlElement getBaseColumnEqualElement() {
         XmlElement answer = new XmlElement("include");
-        answer.addAttribute(new Attribute("refid", ((AbstractAttributes) tableInfoWrapper.getAttributes()).getBaseColumnEqual()));
+        answer.addAttribute(new Attribute("refid", tableInfoWrapper.getAttributes().getBaseColumnEqual()));
         return answer;
     }
 

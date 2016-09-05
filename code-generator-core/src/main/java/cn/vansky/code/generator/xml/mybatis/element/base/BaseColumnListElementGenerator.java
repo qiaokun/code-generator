@@ -17,14 +17,7 @@ import java.util.Iterator;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class BaseColumnListElementGenerator extends AbstractXmlElementGenerator {
-
-    protected AbstractAttributes attributes;
-
-    @Override
-    public void getAttributes() {
-        this.attributes = tableInfoWrapper.getAttributes();
-    }
+public class BaseColumnListElementGenerator<T extends AbstractAttributes> extends AbstractXmlElementGenerator<T> {
 
     @Override
     public void prepareXmlElement() {

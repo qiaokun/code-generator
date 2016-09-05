@@ -17,14 +17,7 @@ import org.apache.commons.lang.StringUtils;
  * Author: CK
  * Date: 2015/6/7
  */
-public class ResultMapWithBLOBsElementGenerator extends AbstractXmlElementGenerator {
-
-    protected AbstractAttributes attributes;
-
-    @Override
-    public void getAttributes() {
-        this.attributes = tableInfoWrapper.getAttributes();
-    }
+public class ResultMapWithBLOBsElementGenerator<T extends AbstractAttributes> extends AbstractXmlElementGenerator<T> {
 
     @Override
     public void prepareXmlElement() {
@@ -94,10 +87,7 @@ public class ResultMapWithBLOBsElementGenerator extends AbstractXmlElementGenera
 
             if (c.getJavaTypeInfo().isPrimitive()) {
                 // need to use the MyBatis type alias for a primitive byte
-                StringBuilder sb = new StringBuilder();
-                sb.append('_');
-                sb.append(c.getJavaTypeInfo().getShortName());
-                resultElement.addAttribute(new Attribute("javaType", sb.toString()));
+                resultElement.addAttribute(new Attribute("javaType", "_" + c.getJavaTypeInfo().getShortName()));
             } else if ("byte[]".equals(c.getJavaTypeInfo().getFullyQualifiedName())) {
                 // need to use the MyBatis type alias for a primitive byte arry
                 resultElement.addAttribute(new Attribute("javaType", "_byte[]"));

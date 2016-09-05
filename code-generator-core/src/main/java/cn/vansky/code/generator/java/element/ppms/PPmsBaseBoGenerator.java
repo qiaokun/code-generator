@@ -6,10 +6,12 @@ package cn.vansky.code.generator.java.element.ppms;
 
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.ppms.PPmsAttributes;
 import cn.vansky.code.generator.java.Field;
 import cn.vansky.code.generator.java.JavaTypeInfo;
 import cn.vansky.code.generator.java.Method;
 import cn.vansky.code.generator.java.TopLevelClass;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 
 import java.util.List;
@@ -19,8 +21,8 @@ import java.util.List;
  * Author: CK
  * Date: 2015/6/13
  */
-public class PPmsBaseBoGenerator extends PPmsJavaElementGenerator {
-    public PPmsBaseBoGenerator(TableInfoWrapper tableInfoWrapper) {
+public class PPmsBaseBoGenerator extends AbstractJavaElementGenerator<PPmsAttributes> {
+    public PPmsBaseBoGenerator(TableInfoWrapper<PPmsAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

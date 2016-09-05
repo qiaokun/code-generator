@@ -18,7 +18,7 @@ import java.util.List;
  * Auth: CK
  * Date: 2016/7/10
  */
-public class PPmsTableMyBatis3Impl extends TableInfoWrapper {
+public class PPmsTableMyBatis3Impl extends TableInfoWrapper<PPmsAttributes> {
     public PPmsTableMyBatis3Impl(CodeGenContext context) {
         super(context);
         this.xmlMapperGenerator = new PpmsBaseXMLMapperGenerator();
@@ -29,7 +29,7 @@ public class PPmsTableMyBatis3Impl extends TableInfoWrapper {
     }
 
     public void getGeneratedXmlFiles(List<GeneratedXmlFile> answer) {
-        PPmsAttributes pmsAttributes = (PPmsAttributes) this.attributes;
+        PPmsAttributes pmsAttributes = this.attributes;
         // bo扩展类
         Document document = xmlMapperGenerator.getDocument();
         GeneratedXmlFile gxf = new GeneratedXmlFile(document,

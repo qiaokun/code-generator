@@ -5,7 +5,9 @@
 package cn.vansky.code.generator.java.element.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 
 import java.util.HashSet;
@@ -15,8 +17,8 @@ import java.util.HashSet;
  * Author: CK
  * Date: 2015/6/13
  */
-public class FrameworkServiceImplGenerator extends FrameworkJavaElementGenerator {
-    public FrameworkServiceImplGenerator(TableInfoWrapper tableInfoWrapper) {
+public class FrameworkServiceImplGenerator extends AbstractJavaElementGenerator<FrameworkAttributes> {
+    public FrameworkServiceImplGenerator(TableInfoWrapper<FrameworkAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

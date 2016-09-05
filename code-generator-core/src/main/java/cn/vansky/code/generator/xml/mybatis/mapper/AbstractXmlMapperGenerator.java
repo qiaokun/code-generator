@@ -5,6 +5,7 @@
 package cn.vansky.code.generator.xml.mybatis.mapper;
 
 import cn.vansky.code.generator.api.AbstractGenerator;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
@@ -18,7 +19,7 @@ import cn.vansky.code.generator.xml.mybatis.element.base.ResultMapWithoutBLOBsEl
  * Author: CK.
  * Date: 2015/6/6.
  */
-public abstract class AbstractXmlMapperGenerator extends AbstractGenerator {
+public abstract class AbstractXmlMapperGenerator<T extends AbstractAttributes> extends AbstractGenerator<T> {
 
     /**
      * 获取文档信息
@@ -26,7 +27,7 @@ public abstract class AbstractXmlMapperGenerator extends AbstractGenerator {
      */
     public abstract Document getDocument();
 
-    protected void initializeAndExecuteGenerator(AbstractXmlElementGenerator elementGenerator,
+    protected void initializeAndExecuteGenerator(AbstractXmlElementGenerator<T> elementGenerator,
                                                  XmlElement parentElement) {
         elementGenerator.setTableInfoWrapper(tableInfoWrapper);
         elementGenerator.addElements(parentElement);
@@ -38,14 +39,14 @@ public abstract class AbstractXmlMapperGenerator extends AbstractGenerator {
      */
     protected void addResultMapWithoutBLOBsElement(XmlElement parentElement) {
         if (rules.generateBaseResultMap()) {
-            AbstractXmlElementGenerator elementGenerator = new ResultMapWithoutBLOBsElementGenerator(false);
+            AbstractXmlElementGenerator<T> elementGenerator = new ResultMapWithoutBLOBsElementGenerator<T>(false);
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addResultMapWithBLOBsElement(XmlElement parentElement) {
         if (rules.generateResultMapWithBLOBs()) {
-            AbstractXmlElementGenerator elementGenerator = new ResultMapWithBLOBsElementGenerator();
+            AbstractXmlElementGenerator<T> elementGenerator = new ResultMapWithBLOBsElementGenerator<T>();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
@@ -56,14 +57,14 @@ public abstract class AbstractXmlMapperGenerator extends AbstractGenerator {
      */
     protected void addBaseColumnListElement(XmlElement parentElement) {
         if (rules.generateBaseColumnList()) {
-            AbstractXmlElementGenerator elementGenerator = new BaseColumnListElementGenerator();
+            AbstractXmlElementGenerator<T> elementGenerator = new BaseColumnListElementGenerator<T>();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addBlobColumnListElement(XmlElement parentElement) {
         if (rules.generateBlobColumnList()) {
-            AbstractXmlElementGenerator elementGenerator = new BlobColumnListElementGenerator();
+            AbstractXmlElementGenerator<T> elementGenerator = new BlobColumnListElementGenerator<T>();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

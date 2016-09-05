@@ -2,6 +2,7 @@ package cn.vansky.code.generator.xml.spring.document.pos;
 
 import cn.vansky.code.generator.config.CodeGenContext;
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.spring.document.AbstractSpringXMLDocument;
 import cn.vansky.code.generator.xml.spring.element.AbstractSpringXMLElement;
@@ -16,9 +17,9 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PosSpringXMLDocument extends AbstractSpringXMLDocument {
+public class PosSpringXMLDocument extends AbstractSpringXMLDocument<PosAttributes> {
 
-    public PosSpringXMLDocument(CodeGenContext context, List<TableInfoWrapper> tableInfoWrapper) {
+    public PosSpringXMLDocument(CodeGenContext context, List<TableInfoWrapper<PosAttributes>> tableInfoWrapper) {
         super(context, tableInfoWrapper);
     }
 

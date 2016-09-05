@@ -4,14 +4,16 @@
 
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: CK
  * Date: 2015/6/7
  */
-public class SelectAllByElementGenerator extends FrameworkXmlElementGenerator {
+public class SelectAllByElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     @Override
     public void prepareXmlElement() {

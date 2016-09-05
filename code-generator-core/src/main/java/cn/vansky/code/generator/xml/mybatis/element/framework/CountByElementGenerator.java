@@ -4,14 +4,16 @@
 
 package cn.vansky.code.generator.xml.mybatis.element.framework;
 
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 查询总数量
  * Author: CK
  * Date: 2015/6/7
  */
-public class CountByElementGenerator extends FrameworkXmlElementGenerator {
+public class CountByElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
     @Override
     public void prepareXmlElement() {

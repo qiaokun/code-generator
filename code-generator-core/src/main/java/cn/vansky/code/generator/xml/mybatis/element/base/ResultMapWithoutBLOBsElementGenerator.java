@@ -19,20 +19,13 @@ import java.util.List;
  * Author: CK
  * Date: 2015/6/7
  */
-public class ResultMapWithoutBLOBsElementGenerator extends AbstractXmlElementGenerator {
-
-    protected AbstractAttributes attributes;
+public class ResultMapWithoutBLOBsElementGenerator<T extends AbstractAttributes> extends AbstractXmlElementGenerator<T> {
 
     private boolean isSimple;
 
     public ResultMapWithoutBLOBsElementGenerator(boolean isSimple) {
         super();
         this.isSimple = isSimple;
-    }
-
-    @Override
-    public void getAttributes() {
-        this.attributes = tableInfoWrapper.getAttributes();
     }
 
     @Override

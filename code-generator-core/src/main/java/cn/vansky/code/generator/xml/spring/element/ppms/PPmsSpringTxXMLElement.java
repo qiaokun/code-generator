@@ -17,9 +17,9 @@ import java.util.List;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PPmsSpringTxXMLElement extends AbstractSpringXMLElement {
+public class PPmsSpringTxXMLElement extends AbstractSpringXMLElement<PPmsAttributes> {
 
-    public PPmsSpringTxXMLElement(String name, CodeGenContext context, List<TableInfoWrapper> ts) {
+    public PPmsSpringTxXMLElement(String name, CodeGenContext context, List<TableInfoWrapper<PPmsAttributes>> ts) {
         super(name, context, ts);
     }
 
@@ -27,8 +27,8 @@ public class PPmsSpringTxXMLElement extends AbstractSpringXMLElement {
         answer.addAttribute(new Attribute("\n\t\t\t\t" + SpringXMLConstants.XMLNS_SCHEMA_LOCATION,
                 SpringXMLConstants.SPRING_BEANS + "\n\t\t\t\t" + SpringXMLConstants.SPRING_BEANS_XSD));
 
-        for (TableInfoWrapper t : this.tableInfoWrappers) {
-            PPmsAttributes attributes = ((PPmsAttributes) t.getAttributes());
+        for (TableInfoWrapper<PPmsAttributes> t : this.tableInfoWrappers) {
+            PPmsAttributes attributes = t.getAttributes();
             XmlElement service = new XmlElement("bean");
             JavaTypeInfo serviceId = attributes.getService();
             service.addAttribute(new Attribute("id", JavaBeansUtil.getValidPropertyName(serviceId.getShortName())));

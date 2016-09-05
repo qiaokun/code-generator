@@ -6,7 +6,9 @@ package cn.vansky.code.generator.java.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 
 import java.util.List;
@@ -16,8 +18,8 @@ import java.util.List;
  * Author: CK
  * Date: 2015/6/13
  */
-public class PosBaseBoGenerator extends PosJavaElementGenerator {
-    public PosBaseBoGenerator(TableInfoWrapper tableInfoWrapper) {
+public class PosBaseBoGenerator extends AbstractJavaElementGenerator<PosAttributes> {
+    public PosBaseBoGenerator(TableInfoWrapper<PosAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

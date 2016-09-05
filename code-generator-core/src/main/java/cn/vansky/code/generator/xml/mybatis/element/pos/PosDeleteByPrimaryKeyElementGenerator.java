@@ -5,16 +5,17 @@
 package cn.vansky.code.generator.xml.mybatis.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 删除语句（主键）
  * Author: CK
  * Date: 2015/6/7
  */
-public class PosDeleteByPrimaryKeyElementGenerator extends PosXmlElementGenerator {
-
+public class PosDeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
     public PosDeleteByPrimaryKeyElementGenerator() {
         super();

@@ -5,17 +5,19 @@
 package cn.vansky.code.generator.xml.mybatis.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.TextElement;
 import cn.vansky.code.generator.xml.XmlElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 /**
  * 添加部分字段,if-test
  * Author: CK
  * Date: 2015/6/7
  */
-public class PosInsertSelectiveElementGenerator extends PosXmlElementGenerator {
+public class PosInsertSelectiveElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
     private String useGeneratedKeys = "true";
 

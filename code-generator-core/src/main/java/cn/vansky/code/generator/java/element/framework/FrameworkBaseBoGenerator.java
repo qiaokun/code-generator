@@ -6,7 +6,9 @@ package cn.vansky.code.generator.java.element.framework;
 
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 import cn.vansky.framework.core.dao.annotation.ColumnDescription;
 import cn.vansky.framework.core.dao.annotation.Id;
@@ -19,8 +21,8 @@ import java.util.List;
  * Author: CK
  * Date: 2015/6/13
  */
-public class FrameworkBaseBoGenerator extends FrameworkJavaElementGenerator {
-    public FrameworkBaseBoGenerator(TableInfoWrapper tableInfoWrapper) {
+public class FrameworkBaseBoGenerator extends AbstractJavaElementGenerator<FrameworkAttributes> {
+    public FrameworkBaseBoGenerator(TableInfoWrapper<FrameworkAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

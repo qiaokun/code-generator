@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.xml.mybatis.mapper.pos;
 
 import cn.vansky.code.generator.config.XmlConstants;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.xml.Attribute;
 import cn.vansky.code.generator.xml.Document;
 import cn.vansky.code.generator.xml.XmlElement;
@@ -13,7 +14,7 @@ import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
  * Author: CK.
  * Date: 2015/6/6.
  */
-public class PosBaseXMLMapperGenerator extends AbstractXmlMapperGenerator {
+public class PosBaseXMLMapperGenerator extends AbstractXmlMapperGenerator<PosAttributes> {
 
     @Override
     public Document getDocument() {
@@ -57,56 +58,56 @@ public class PosBaseXMLMapperGenerator extends AbstractXmlMapperGenerator {
 
     protected void addSelectElement(XmlElement parentElement) {
         if (rules.generateInsertSelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PosSelectElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosSelectByPrimaryKeyElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addInsertElement(XmlElement parentElement) {
         if (rules.generateInsertSelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PosSaveElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosSaveElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addInsertSelective(XmlElement parentElement) {
         if (rules.generateInsertSelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PosInsertSelectiveElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosInsertSelectiveElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addInsertBatchElement(XmlElement parentElement) {
         if (rules.generateInsertBatch()) {
-            AbstractXmlElementGenerator elementGenerator = new PosInsertBatchElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosInsertBatchElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addUpdateElement(XmlElement parentElement) {
         if (rules.generateUpdateByPrimaryKeySelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PosUpdateByPrimaryKeyElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosUpdateByPrimaryKeyElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addUpdateSelectiveElement(XmlElement parentElement) {
         if (rules.generateUpdateByPrimaryKeySelective()) {
-            AbstractXmlElementGenerator elementGenerator = new PosUpdateSelectiveElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosUpdateSelectiveElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addDeleteElement(XmlElement parentElement) {
         if (rules.generateDeleteByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PosDeleteByPrimaryKeyElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosDeleteByPrimaryKeyElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }
 
     protected void addPpmsFindPageElement(XmlElement parentElement) {
         if (rules.generateSelectByPrimaryKey()) {
-            AbstractXmlElementGenerator elementGenerator = new PosFindPageElementGenerator();
+            AbstractXmlElementGenerator<PosAttributes> elementGenerator = new PosFindPageElementGenerator();
             initializeAndExecuteGenerator(elementGenerator, parentElement);
         }
     }

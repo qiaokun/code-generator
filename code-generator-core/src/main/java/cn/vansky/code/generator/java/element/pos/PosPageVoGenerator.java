@@ -1,17 +1,19 @@
 package cn.vansky.code.generator.java.element.pos;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.java.JavaTypeInfo;
 import cn.vansky.code.generator.java.TopLevelClass;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 /**
  * Created by IntelliJ IDEA .
  * Auth: CK
  * Date: 2016/9/1
  */
-public class PosPageVoGenerator extends PosJavaElementGenerator {
+public class PosPageVoGenerator extends AbstractJavaElementGenerator<PosAttributes> {
 
-    public PosPageVoGenerator(TableInfoWrapper tableInfoWrapper) {
+    public PosPageVoGenerator(TableInfoWrapper<PosAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

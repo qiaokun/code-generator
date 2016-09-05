@@ -5,15 +5,17 @@
 package cn.vansky.code.generator.java.element.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
+import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 /**
  * Created by IntelliJ IDEA.
  * Author: CK
  * Date: 2015/6/13
  */
-public class FrameworkMapperGenerator extends FrameworkJavaElementGenerator {
-    public FrameworkMapperGenerator(TableInfoWrapper tableInfoWrapper) {
+public class FrameworkMapperGenerator extends AbstractJavaElementGenerator<FrameworkAttributes> {
+    public FrameworkMapperGenerator(TableInfoWrapper<FrameworkAttributes> tableInfoWrapper) {
         super(tableInfoWrapper);
     }
 

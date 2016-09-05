@@ -1,6 +1,7 @@
 package cn.vansky.code.generator.java.element;
 
 import cn.vansky.code.generator.api.AbstractGenerator;
+import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.java.*;
@@ -13,10 +14,13 @@ import java.util.Set;
  * Auth: CK
  * Date: 2016/7/10
  */
-public abstract class AbstractJavaElementGenerator extends AbstractGenerator {
+public abstract class AbstractJavaElementGenerator<T extends AbstractAttributes> extends AbstractGenerator<T> {
 
-    public AbstractJavaElementGenerator(TableInfoWrapper tableInfoWrapper) {
+    protected T attributes;
+
+    public AbstractJavaElementGenerator(TableInfoWrapper<T> tableInfoWrapper) {
         setTableInfoWrapper(tableInfoWrapper);
+        this.attributes = tableInfoWrapper.getAttributes();
     }
 
     protected JavaTypeInfo javaTypeInfo;

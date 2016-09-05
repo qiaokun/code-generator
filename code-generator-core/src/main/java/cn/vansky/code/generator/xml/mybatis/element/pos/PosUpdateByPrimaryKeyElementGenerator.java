@@ -5,9 +5,11 @@
 package cn.vansky.code.generator.xml.mybatis.element.pos;
 
 import cn.vansky.code.generator.db.ColumnInfo;
+import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.util.MyBatis3FormattingUtil;
 import cn.vansky.code.generator.util.OutputUtil;
 import cn.vansky.code.generator.xml.TextElement;
+import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
 
 import java.util.Iterator;
 
@@ -16,7 +18,7 @@ import java.util.Iterator;
  * Author: CK
  * Date: 2015/6/7
  */
-public class PosUpdateByPrimaryKeyElementGenerator extends PosXmlElementGenerator {
+public class PosUpdateByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
     public PosUpdateByPrimaryKeyElementGenerator() {
         super();

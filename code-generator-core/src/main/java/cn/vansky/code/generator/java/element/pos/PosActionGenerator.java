@@ -54,7 +54,6 @@ public class PosActionGenerator extends AbstractJavaElementGenerator<PosAttribut
         StringBuilder sb = new StringBuilder();
         sb.append("ModelAndViewObject mavo = new ModelAndViewObject(\"\");");
         method.addBodyLine(sb.toString());
-        method.addBodyLine("try {");
 
         sb.setLength(0);
         sb.append(attributes.getPageVo().getShortName());
@@ -76,9 +75,6 @@ public class PosActionGenerator extends AbstractJavaElementGenerator<PosAttribut
         topLevelClass.addImportedType(JavaTypeInfoEnum.LIST.getJavaTypeInfo());
 
         method.addBodyLine("mavo.setList(list);");
-        method.addBodyLine("} catch (Exception t) {");
-        method.addBodyLine("logger.error(\"查询数据库异常{}\", t);");
-        method.addBodyLine("}");
         sb.setLength(0);
         sb.append("return mavo.getMAV();");
         method.addBodyLine(sb.toString());

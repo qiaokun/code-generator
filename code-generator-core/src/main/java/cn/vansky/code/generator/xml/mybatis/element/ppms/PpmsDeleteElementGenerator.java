@@ -13,7 +13,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PpmsDeleteElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "delete";
         id = "delete";
@@ -27,7 +26,6 @@ public class PpmsDeleteElementGenerator extends AbstractXmlElementGenerator<PPms
         parameterType = parameterClass;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("delete from ");

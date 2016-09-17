@@ -24,7 +24,6 @@ public class PosSpringServletXMLElement extends AbstractSpringXMLElement<PosAttr
         super(name, context, ts);
     }
 
-    @Override
     public void getElement(XmlElement answer) {
         answer.addAttribute(new Attribute("\n\t\t\t\t" + SpringXMLConstants.XMLNS_SCHEMA_LOCATION,
                 SpringXMLConstants.SPRING_BEANS + "\n\t\t\t\t" + SpringXMLConstants.SPRING_BEANS_XSD));

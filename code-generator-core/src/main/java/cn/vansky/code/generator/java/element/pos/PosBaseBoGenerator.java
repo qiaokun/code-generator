@@ -7,7 +7,10 @@ package cn.vansky.code.generator.java.element.pos;
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.pos.PosAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 

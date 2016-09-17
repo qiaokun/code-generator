@@ -19,7 +19,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PosUpdateSelectiveElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = attributes.getUpdateByPrimaryKeySelective();
@@ -33,7 +32,6 @@ public class PosUpdateSelectiveElementGenerator extends AbstractXmlElementGenera
         parameterType = tmpParameterType;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
 

@@ -8,8 +8,6 @@ import cn.vansky.code.generator.vo.CodeVo;
 import cn.vansky.code.generator.vo.TableName;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.

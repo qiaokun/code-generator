@@ -210,12 +210,10 @@ public class PosAttributes extends AbstractAttributes {
         return vo;
     }
 
-    @Override
     public String getBaseRecord() {
         return baseRecord;
     }
 
-    @Override
     public String getRecordWithBLOBsType() {
         return null;
     }

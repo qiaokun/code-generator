@@ -6,7 +6,11 @@ package cn.vansky.code.generator.api;
 
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.CompilationUnit;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.InnerClass;
+import cn.vansky.code.generator.java.InnerEnum;
+import cn.vansky.code.generator.java.Method;
 import cn.vansky.code.generator.xml.XmlElement;
 
 /**

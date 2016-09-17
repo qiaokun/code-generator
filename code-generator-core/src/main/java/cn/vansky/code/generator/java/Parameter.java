@@ -81,7 +81,6 @@ public class Parameter {
         return isVarargs;
     }
 
-    @Override
     public String toString() {
         return getFormattedContent();
     }

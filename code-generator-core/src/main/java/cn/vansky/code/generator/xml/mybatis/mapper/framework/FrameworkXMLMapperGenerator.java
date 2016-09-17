@@ -7,7 +7,16 @@ package cn.vansky.code.generator.xml.mybatis.mapper.framework;
 import cn.vansky.code.generator.db.framework.FrameworkAttributes;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
-import cn.vansky.code.generator.xml.mybatis.element.framework.*;
+import cn.vansky.code.generator.xml.mybatis.element.framework.CountByElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.DeleteByPrimaryKeyElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.InsertBatchElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.InsertElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.InsertSelectiveElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.SelectAllByElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.SelectByPrimaryKeyElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.UpdateByPrimaryKeySelectiveElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.UpdateByPrimaryKeyWithBLOBsElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.framework.UpdateByPrimaryKeyWithoutBLOBsElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 
 /**

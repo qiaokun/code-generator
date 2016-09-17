@@ -27,14 +27,12 @@ public class UpdateByPrimaryKeyWithoutBLOBsElementGenerator extends AbstractXmlE
         this.isSimple = isSimple;
     }
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = attributes.getUpdateByPrimaryKey();
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("update ");

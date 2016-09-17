@@ -20,7 +20,6 @@ import java.util.Iterator;
  */
 public class UpdateByPrimaryKeyWithBLOBsElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = attributes.getUpdateByPrimaryKeySelectiveWithBLOBs();
@@ -33,7 +32,6 @@ public class UpdateByPrimaryKeyWithBLOBsElementGenerator extends AbstractXmlElem
         parameterType = tmpParameterType;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
 

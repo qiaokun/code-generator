@@ -22,14 +22,12 @@ import java.util.List;
  */
 public class PosSaveElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "insert";
         id = "save";
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         String keyProperty;
         if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {

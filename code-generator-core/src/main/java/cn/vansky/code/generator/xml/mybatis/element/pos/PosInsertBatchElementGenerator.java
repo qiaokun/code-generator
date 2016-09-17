@@ -23,14 +23,12 @@ import java.util.List;
  */
 public class PosInsertBatchElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "insert";
         id = attributes.getInsertBatch();
         parameterType = "java.util.List";
     }
 
-    @Override
     public void dealElements() {
         StringBuilder insertClause = new StringBuilder();
         StringBuilder valuesClause = new StringBuilder();

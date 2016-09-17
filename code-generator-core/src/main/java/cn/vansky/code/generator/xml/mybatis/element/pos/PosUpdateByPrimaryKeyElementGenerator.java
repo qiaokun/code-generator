@@ -20,14 +20,12 @@ import java.util.Iterator;
  */
 public class PosUpdateByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = attributes.getUpdateByPrimaryKey();
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("update ");

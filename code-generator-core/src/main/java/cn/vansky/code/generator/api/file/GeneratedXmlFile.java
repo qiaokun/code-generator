@@ -37,17 +37,14 @@ public class GeneratedXmlFile extends GeneratedFile {
         this.xmlFormatter = xmlFormatter;
     }
 
-    @Override
     public String getFormattedContent() {
         return xmlFormatter.getFormattedContent(document);
     }
 
-    @Override
     public String getFileName() {
         return fileName;
     }
 
-    @Override
     public String getTargetPackage() {
         return targetPackage;
     }

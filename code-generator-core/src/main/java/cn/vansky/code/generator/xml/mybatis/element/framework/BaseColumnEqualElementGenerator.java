@@ -19,13 +19,11 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class BaseColumnEqualElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "sql";
         id = attributes.getBaseColumnEqual();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         for (ColumnInfo c : tableInfoWrapper.getAllColumns()) {

@@ -3,7 +3,13 @@ package cn.vansky.code.generator.xml.mybatis.mapper.ppms;
 import cn.vansky.code.generator.db.ppms.PPmsAttributes;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
-import cn.vansky.code.generator.xml.mybatis.element.ppms.*;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsDeleteElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsFindPageElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsGetElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsGetListElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsInsertBatchElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsInsertElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.ppms.PpmsUpdateElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 
 /**

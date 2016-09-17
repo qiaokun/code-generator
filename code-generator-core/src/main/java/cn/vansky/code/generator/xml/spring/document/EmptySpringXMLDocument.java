@@ -21,7 +21,6 @@ public class EmptySpringXMLDocument extends AbstractSpringXMLDocument<AbstractAt
         super(context, tableInfoWrapper);
     }
 
-    @Override
     public List<Document> getDocument() {
         List<Document> documents = new ArrayList<Document>();
 

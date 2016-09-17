@@ -6,7 +6,13 @@ package cn.vansky.code.generator.java.element.pos;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.pos.PosAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.JavaKeywords;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.JavaTypeInfoEnum;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.Parameter;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 
@@ -22,7 +28,6 @@ public class PosServiceImplGenerator extends AbstractJavaElementGenerator<PosAtt
         super(tableInfoWrapper);
     }
 
-    @Override
     public void prepareElement() {
         javaTypeInfo = attributes.getServiceImpl();
         superClass = attributes.getGenericSqlMapServiceImpl();
@@ -30,7 +35,6 @@ public class PosServiceImplGenerator extends AbstractJavaElementGenerator<PosAtt
         superInterfaces.add(attributes.getService());
     }
 
-    @Override
     public void dealElement(TopLevelClass topLevelClass) {
         JavaTypeInfo bo = attributes.getBo();
         topLevelClass.addImportedType(bo);

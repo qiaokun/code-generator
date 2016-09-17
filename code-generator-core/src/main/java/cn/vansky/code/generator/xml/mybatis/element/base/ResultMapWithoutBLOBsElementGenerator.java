@@ -28,7 +28,6 @@ public class ResultMapWithoutBLOBsElementGenerator<T extends AbstractAttributes>
         this.isSimple = isSimple;
     }
 
-    @Override
     public void prepareXmlElement() {
         name = "resultMap";
         id = attributes.getBaseResultMap();
@@ -41,7 +40,6 @@ public class ResultMapWithoutBLOBsElementGenerator<T extends AbstractAttributes>
         type = returnType;
     }
 
-    @Override
     public void dealElements() {
         if (tableInfoWrapper.isConstructorBased()) {
             addResultMapConstructorElements(answer);

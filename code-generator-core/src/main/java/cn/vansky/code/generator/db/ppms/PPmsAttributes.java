@@ -135,12 +135,10 @@ public class PPmsAttributes extends AbstractAttributes {
         return bo;
     }
 
-    @Override
     public String getBaseRecord() {
         return baseRecord;
     }
 
-    @Override
     public String getRecordWithBLOBsType() {
         return null;
     }

@@ -15,14 +15,12 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PpmsUpdateElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = "update";
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
 

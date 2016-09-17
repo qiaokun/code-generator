@@ -19,7 +19,6 @@ import org.apache.commons.lang.StringUtils;
  */
 public class ResultMapWithBLOBsElementGenerator<T extends AbstractAttributes> extends AbstractXmlElementGenerator<T> {
 
-    @Override
     public void prepareXmlElement() {
         name = "resultMap";
         id = attributes.getResultMapWithBLOBs();
@@ -34,7 +33,6 @@ public class ResultMapWithBLOBsElementGenerator<T extends AbstractAttributes> ex
         type = returnType;
     }
 
-    @Override
     public void dealElements() {
         if (tableInfoWrapper.isConstructorBased()) {
             addResultMapConstructorElements(answer);

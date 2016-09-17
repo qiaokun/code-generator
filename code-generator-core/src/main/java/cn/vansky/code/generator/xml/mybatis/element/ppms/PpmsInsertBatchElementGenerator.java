@@ -19,14 +19,12 @@ import java.util.List;
  */
 public class PpmsInsertBatchElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "insert";
         id = "insertBatch";
         parameterType = "java.util.List";
     }
 
-    @Override
     public void dealElements() {
         StringBuilder insertClause = new StringBuilder();
         StringBuilder valuesClause = new StringBuilder();

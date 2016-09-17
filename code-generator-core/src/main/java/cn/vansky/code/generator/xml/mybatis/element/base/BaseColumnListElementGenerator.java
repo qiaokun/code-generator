@@ -19,13 +19,11 @@ import java.util.Iterator;
  */
 public class BaseColumnListElementGenerator<T extends AbstractAttributes> extends AbstractXmlElementGenerator<T> {
 
-    @Override
     public void prepareXmlElement() {
         name = "sql";
         id = attributes.getBaseColumnList();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         Iterator<ColumnInfo> iter = tableInfoWrapper.getNonBLOBColumns().iterator();

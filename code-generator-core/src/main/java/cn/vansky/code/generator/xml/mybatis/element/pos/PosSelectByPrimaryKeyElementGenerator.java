@@ -17,7 +17,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PosSelectByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "select";
         id = attributes.getSelectByPrimaryKey();
@@ -32,7 +31,6 @@ public class PosSelectByPrimaryKeyElementGenerator extends AbstractXmlElementGen
         parameterType = tmpParameterType;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("select ");

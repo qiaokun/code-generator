@@ -7,7 +7,11 @@ package cn.vansky.code.generator.java;
 import cn.vansky.code.generator.util.OutputUtil;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * 类包括的基本信息

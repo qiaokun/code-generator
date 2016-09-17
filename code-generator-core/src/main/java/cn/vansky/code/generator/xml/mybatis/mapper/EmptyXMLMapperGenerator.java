@@ -10,7 +10,6 @@ import cn.vansky.code.generator.xml.XmlElement;
  */
 public class EmptyXMLMapperGenerator<T extends AbstractAttributes> extends AbstractXmlMapperGenerator<T> {
 
-    @Override
     public void getSqlMapElement(XmlElement answer) {
         answer.setEnd(false);
     }

@@ -24,7 +24,6 @@ public class CodeServiceImpl implements CodeService {
     @Resource(name = "codeDao")
     private CodeDao codeDao;
 
-    @Override
     public List<TableName> selectTableName(CodeVo codeVo) {
         return codeDao.selectTableName(codeVo);
     }

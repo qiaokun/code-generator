@@ -7,7 +7,12 @@ package cn.vansky.code.generator.util;
 import cn.vansky.code.generator.config.CodeGenContext;
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.JavaKeywords;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.JavaTypeInfoEnum;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.Parameter;
 
 import java.util.Locale;
 

@@ -6,7 +6,8 @@ package cn.vansky.code.generator.java.element.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.framework.FrameworkAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.JavaTypeInfoEnum;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 /**
@@ -19,13 +20,11 @@ public class FrameworkDaoGenerator extends AbstractJavaElementGenerator<Framewor
         super(tableInfoWrapper);
     }
 
-    @Override
     public void prepareElement() {
         javaTypeInfo = attributes.getDao();
         superClass = attributes.getSqlMapDao();
     }
 
-    @Override
     public void dealElement(TopLevelClass topLevelClass) {
         topLevelClass.setInterface(true);
         topLevelClass.addImportedType(attributes.getBo());

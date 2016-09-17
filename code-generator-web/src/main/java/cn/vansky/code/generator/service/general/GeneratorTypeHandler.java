@@ -23,7 +23,6 @@ public class GeneratorTypeHandler extends DefaultKvHandler {
 
     protected void setupTemplates() {
         this.fn = new Function<Map<String, Object>, List<Map<String, Object>>>() {
-            @Override
             public List<Map<String, Object>> apply(Map<String, Object> input) {
                 List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
                 TableInfoWrapperEnum [] tableInfoWrapperEnums = TableInfoWrapperEnum.values();

@@ -3,7 +3,14 @@ package cn.vansky.code.generator.xml.mybatis.mapper.pos;
 import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.xml.XmlElement;
 import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
-import cn.vansky.code.generator.xml.mybatis.element.pos.*;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosDeleteByPrimaryKeyElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosFindPageElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosInsertBatchElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosInsertSelectiveElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosSaveElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosSelectByPrimaryKeyElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosUpdateByPrimaryKeyElementGenerator;
+import cn.vansky.code.generator.xml.mybatis.element.pos.PosUpdateSelectiveElementGenerator;
 import cn.vansky.code.generator.xml.mybatis.mapper.AbstractXmlMapperGenerator;
 
 /**

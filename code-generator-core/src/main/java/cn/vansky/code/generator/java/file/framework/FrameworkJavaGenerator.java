@@ -2,9 +2,15 @@ package cn.vansky.code.generator.java.file.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.framework.FrameworkAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.CompilationUnit;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
-import cn.vansky.code.generator.java.element.framework.*;
+import cn.vansky.code.generator.java.element.framework.FrameworkBaseBoGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkDaoGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkDaoImplGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkExtendsBoGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkMapperGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkServiceGenerator;
+import cn.vansky.code.generator.java.element.framework.FrameworkServiceImplGenerator;
 import cn.vansky.code.generator.java.file.AbstractJavaGenerator;
 
 import java.util.List;

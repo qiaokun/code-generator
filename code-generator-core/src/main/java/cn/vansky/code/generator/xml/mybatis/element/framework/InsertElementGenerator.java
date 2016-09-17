@@ -22,14 +22,12 @@ import java.util.List;
  */
 public class InsertElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "insert";
         id = attributes.getInsert();
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         String keyProperty;
         if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {

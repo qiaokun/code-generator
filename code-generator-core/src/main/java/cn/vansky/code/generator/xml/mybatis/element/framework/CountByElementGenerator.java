@@ -15,14 +15,12 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class CountByElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "select";
         id = attributes.getCount();
         resultType = "java.lang.Integer";
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("select count(*) from ");

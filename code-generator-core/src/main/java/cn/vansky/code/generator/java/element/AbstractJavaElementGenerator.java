@@ -4,7 +4,12 @@ import cn.vansky.code.generator.api.AbstractGenerator;
 import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.CompilationUnit;
+import cn.vansky.code.generator.java.JavaKeywords;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.Parameter;
+import cn.vansky.code.generator.java.TopLevelClass;
 
 import java.util.List;
 import java.util.Set;

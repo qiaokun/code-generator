@@ -16,11 +16,14 @@ import cn.vansky.framework.core.util.JsonResp;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,6 +37,7 @@ public class CodeGenController extends AbstractController {
     @Resource
     CodeService codeService;
 
+    @SuppressWarnings("unchecked")
     @ResponseBody
     @RequestMapping(value = "/selectTableName")
     public String selectTableName(CodeVo vo) {
@@ -54,9 +58,7 @@ public class CodeGenController extends AbstractController {
         context.setDatabaseByUrl(codeVo.getUrl());
         String [] tableNames = codeVo.getTableNames().split(",");
         List<String> list = new ArrayList<String>();
-        for (String tableName : tableNames) {
-            list.add(tableName);
-        }
+        Collections.addAll(list, tableNames);
         context.setTableNameList(list);
         MyBatisGenerator myBatisGenerator = GeneratorFactory.getInstance().getTableInfoWrapper(context);
         myBatisGenerator.generate();

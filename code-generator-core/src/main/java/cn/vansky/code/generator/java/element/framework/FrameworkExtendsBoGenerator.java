@@ -6,7 +6,7 @@ package cn.vansky.code.generator.java.element.framework;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.framework.FrameworkAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 /**

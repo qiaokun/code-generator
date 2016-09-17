@@ -305,7 +305,6 @@ public class JavaTypeInfo implements Comparable<JavaTypeInfo> {
         return explicitlyImported;
     }
 
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -320,17 +319,14 @@ public class JavaTypeInfo implements Comparable<JavaTypeInfo> {
         return getFullyQualifiedName().equals(other.getFullyQualifiedName());
     }
 
-    @Override
     public int hashCode() {
         return getFullyQualifiedName().hashCode();
     }
 
-    @Override
     public String toString() {
         return getFullyQualifiedName();
     }
 
-    @Override
     public int compareTo(JavaTypeInfo o) {
         return getFullyQualifiedName().compareTo(o.getFullyQualifiedName());
     }

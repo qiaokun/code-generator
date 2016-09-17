@@ -3,7 +3,11 @@ package cn.vansky.code.generator.api.comment.ppms;
 import cn.vansky.code.generator.api.comment.DefaultCommentGenerator;
 import cn.vansky.code.generator.db.ColumnInfo;
 import cn.vansky.code.generator.db.TableInfoWrapper;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.CompilationUnit;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.InnerClass;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.Parameter;
 import cn.vansky.framework.common.util.DateUtil;
 
 import java.util.Date;

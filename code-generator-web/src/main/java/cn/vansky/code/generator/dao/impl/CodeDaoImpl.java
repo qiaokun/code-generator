@@ -25,7 +25,6 @@ import java.util.List;
 @Repository("codeDao")
 public class CodeDaoImpl implements CodeDao {
 
-    @Override
     public List<TableName> selectTableName(CodeVo codeVo) {
         List<TableName> list = new ArrayList<TableName>();
         DbManager dbManager = new DbManager(codeVo.getUrl(), codeVo.getUser(), codeVo.getPassword());

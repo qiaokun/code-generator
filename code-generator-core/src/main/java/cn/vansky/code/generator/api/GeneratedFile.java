@@ -48,7 +48,6 @@ public abstract class GeneratedFile {
      */
     public abstract String getTargetPackage();
 
-    @Override
     public String toString() {
         return getFormattedContent();
     }

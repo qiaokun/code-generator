@@ -15,14 +15,12 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PpmsGetListElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "select";
         id = "getList";
         resultMap = attributes.getBaseResultMap();
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("select ");

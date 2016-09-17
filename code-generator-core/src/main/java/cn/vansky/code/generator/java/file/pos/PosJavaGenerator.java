@@ -4,7 +4,13 @@ import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.pos.PosAttributes;
 import cn.vansky.code.generator.java.CompilationUnit;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
-import cn.vansky.code.generator.java.element.pos.*;
+import cn.vansky.code.generator.java.element.pos.PosActionGenerator;
+import cn.vansky.code.generator.java.element.pos.PosBaseBoGenerator;
+import cn.vansky.code.generator.java.element.pos.PosDaoGenerator;
+import cn.vansky.code.generator.java.element.pos.PosPageVoGenerator;
+import cn.vansky.code.generator.java.element.pos.PosServiceGenerator;
+import cn.vansky.code.generator.java.element.pos.PosServiceImplGenerator;
+import cn.vansky.code.generator.java.element.pos.PosVoGenerator;
 import cn.vansky.code.generator.java.file.AbstractJavaGenerator;
 
 import java.util.List;

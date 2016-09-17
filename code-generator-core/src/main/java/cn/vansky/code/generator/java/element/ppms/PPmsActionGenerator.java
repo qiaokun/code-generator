@@ -6,7 +6,12 @@ package cn.vansky.code.generator.java.element.ppms;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.ppms.PPmsAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.Field;
+import cn.vansky.code.generator.java.JavaKeywords;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.Method;
+import cn.vansky.code.generator.java.Parameter;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 

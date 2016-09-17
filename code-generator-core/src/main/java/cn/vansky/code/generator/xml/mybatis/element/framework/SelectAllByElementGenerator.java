@@ -15,7 +15,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class SelectAllByElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "select";
         id = attributes.getSelectAll();
@@ -26,7 +25,6 @@ public class SelectAllByElementGenerator extends AbstractXmlElementGenerator<Fra
         }
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("select ");

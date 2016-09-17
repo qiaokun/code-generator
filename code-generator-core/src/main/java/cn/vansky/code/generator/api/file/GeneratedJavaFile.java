@@ -33,17 +33,14 @@ public class GeneratedJavaFile extends GeneratedFile {
         this.fileEncoding = fileEncoding;
         this.javaFormatter = javaFormatter;
     }
-    @Override
     public String getFormattedContent() {
         return javaFormatter.getFormattedContent(compilationUnit);
     }
 
-    @Override
     public String getFileName() {
         return compilationUnit.getType().getShortName() + ".java";
     }
 
-    @Override
     public String getTargetPackage() {
         return compilationUnit.getType().getPackageName();
     }

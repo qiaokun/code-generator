@@ -6,7 +6,11 @@ package cn.vansky.code.generator.java;
 
 import cn.vansky.code.generator.util.OutputUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 内部枚举

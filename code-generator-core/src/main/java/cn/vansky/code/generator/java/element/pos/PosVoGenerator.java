@@ -17,13 +17,11 @@ public class PosVoGenerator extends AbstractJavaElementGenerator<PosAttributes> 
         super(tableInfoWrapper);
     }
 
-    @Override
     public void prepareElement() {
         javaTypeInfo = attributes.getVo();
         superClass = new JavaTypeInfo("com.zrj.pay.core.model.BaseObject");
     }
 
-    @Override
     public void dealElement(TopLevelClass topLevelClass) {
 
     }

@@ -17,7 +17,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PosDeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGenerator<PosAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "delete";
         id = attributes.getDeleteByPrimaryKey();
@@ -31,7 +30,6 @@ public class PosDeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGen
         parameterType = parameterClass;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
         sb.append("delete from ");

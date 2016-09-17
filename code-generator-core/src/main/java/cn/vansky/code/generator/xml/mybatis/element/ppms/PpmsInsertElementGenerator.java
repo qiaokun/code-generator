@@ -15,14 +15,12 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class PpmsInsertElementGenerator extends AbstractXmlElementGenerator<PPmsAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "insert";
         id = "insert";
         parameterType = attributes.getBo().getFullyQualifiedName();
     }
 
-    @Override
     public void dealElements() {
         String keyProperty;
         if (tableInfoWrapper.getPrimaryKeyColumns().size() > 1) {

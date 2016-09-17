@@ -19,7 +19,6 @@ import cn.vansky.code.generator.xml.mybatis.element.AbstractXmlElementGenerator;
  */
 public class UpdateByPrimaryKeySelectiveElementGenerator extends AbstractXmlElementGenerator<FrameworkAttributes> {
 
-    @Override
     public void prepareXmlElement() {
         name = "update";
         id = attributes.getUpdateByPrimaryKeySelective();
@@ -33,7 +32,6 @@ public class UpdateByPrimaryKeySelectiveElementGenerator extends AbstractXmlElem
         parameterType = tmpParameterType;
     }
 
-    @Override
     public void dealElements() {
         StringBuilder sb = new StringBuilder();
 

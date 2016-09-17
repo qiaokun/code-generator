@@ -6,7 +6,9 @@ package cn.vansky.code.generator.java.element.pos;
 
 import cn.vansky.code.generator.db.TableInfoWrapper;
 import cn.vansky.code.generator.db.pos.PosAttributes;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.JavaTypeInfo;
+import cn.vansky.code.generator.java.JavaTypeInfoEnum;
+import cn.vansky.code.generator.java.TopLevelClass;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 import cn.vansky.code.generator.util.JavaBeansUtil;
 
@@ -20,13 +22,11 @@ public class PosDaoGenerator extends AbstractJavaElementGenerator<PosAttributes>
         super(tableInfoWrapper);
     }
 
-    @Override
     public void prepareElement() {
         javaTypeInfo = attributes.getDao();
         superClass = attributes.getSqlMapDao();
     }
 
-    @Override
     public void dealElement(TopLevelClass topLevelClass) {
         topLevelClass.setInterface(true);
         JavaTypeInfo bo = attributes.getBo();

@@ -7,7 +7,7 @@ package cn.vansky.code.generator.java.file;
 import cn.vansky.code.generator.api.AbstractGenerator;
 import cn.vansky.code.generator.db.AbstractAttributes;
 import cn.vansky.code.generator.db.TableInfoWrapper;
-import cn.vansky.code.generator.java.*;
+import cn.vansky.code.generator.java.CompilationUnit;
 import cn.vansky.code.generator.java.element.AbstractJavaElementGenerator;
 
 import java.util.ArrayList;

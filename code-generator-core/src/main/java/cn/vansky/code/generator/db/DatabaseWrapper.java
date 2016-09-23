@@ -6,8 +6,8 @@ package cn.vansky.code.generator.db;
 
 import cn.vansky.code.generator.config.CodeGenContext;
 import cn.vansky.code.generator.factory.TableInfoWrapperFactory;
+import cn.vansky.code.generator.util.JavaBeansUtil;
 import cn.vansky.framework.common.util.DbManager;
-import cn.vansky.framework.common.util.Tools;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -69,8 +69,8 @@ public class DatabaseWrapper {
                     tableInfo.setIntrospectedSchema(dbTables.getString("TABLE_SCHEM"));
                     tableInfo.setIntrospectedTableName(dbTables.getString("TABLE_NAME"));
                     tableInfo.setRemarks(dbTables.getString("REMARKS"));
-                    tableInfo.setDomainObjectName(Tools.dataBaseToJava(tableName.toLowerCase(), 1));
-                    tableInfo.setDomainObjectSubPackage(Tools.dataBaseToJava(tableName.toLowerCase(), 2));
+                    tableInfo.setDomainObjectName(JavaBeansUtil.dataBaseToJava(tableName.toLowerCase(), 1));
+                    tableInfo.setDomainObjectSubPackage(JavaBeansUtil.dataBaseToJava(tableName.toLowerCase(), 2));
                     tableInfo.setContext(context);
                     tableInfoWrapper.setTableInfo(tableInfo);
                     tableInfoWrapper.setMap(answer);
@@ -89,7 +89,7 @@ public class DatabaseWrapper {
                         if ("YES".equals(rs.getString("IS_AUTOINCREMENT"))) {
                             columnInfo.setIdentity(true);
                         }
-                        columnInfo.setJavaProperty(Tools.getValidPropertyName(Tools.dataBaseToJava(columnInfo
+                        columnInfo.setJavaProperty(JavaBeansUtil.getValidPropertyName(JavaBeansUtil.dataBaseToJava(columnInfo
                                 .getActualColumnName().toLowerCase(), 2)));
                         columns.add(columnInfo);
                         columnInfo.setTableInfo(tableInfo);
@@ -103,7 +103,7 @@ public class DatabaseWrapper {
                         columnInfo.setActualColumnName(pk.getString("COLUMN_NAME"));
                         columnInfo.setKeySeq(pk.getShort("KEY_SEQ"));
                         columnInfo.setPkName(pk.getString("PK_NAME"));
-                        columnInfo.setJavaProperty(Tools.getValidPropertyName(Tools.dataBaseToJava(columnInfo
+                        columnInfo.setJavaProperty(JavaBeansUtil.getValidPropertyName(JavaBeansUtil.dataBaseToJava(columnInfo
                                 .getActualColumnName().toLowerCase(), 2)));
                         columnInfo.setTableInfo(tableInfo);
                         tableInfoWrapper.addPrimaryKeyColumn(columnInfo);
